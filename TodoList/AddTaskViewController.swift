@@ -33,7 +33,9 @@ class AddTaskViewController: UIViewController {
     {
         let a: ViewController = segue.destinationViewController as! ViewController
         if addTaskTxtbox.text != "" {
+           if segue.identifier == "view2savesegue"{
         a.dataFromNewView = addTaskTxtbox.text!
+            }
         a.Array[indexView2] = nam
         }
     }
