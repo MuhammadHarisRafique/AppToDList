@@ -3,9 +3,9 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var index: Int?
+    var index: Int!
     var dataFromNewView: String?
-    var Array = ["abc" , "xyz" , "pqr"]
+    var Array = ["mango", "Orange", "Grapes"]
     
     @IBOutlet weak var btndelOutlet: UIButton!
     @IBOutlet weak var btnupdate: UIButton!
@@ -17,14 +17,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableTaskList.delegate = self
         textboxTask.layer.borderWidth = 1
         textboxTask.layer.borderColor = UIColor.blackColor().CGColor
+        self.btndelOutlet.enabled = false
+        self.btnupdate.enabled = false
             }
     override func viewDidAppear(animated: Bool) {
-        if dataFromNewView != nil{
-        Array.append(dataFromNewView!)
+        if dataFromNewView != "" && dataFromNewView != nil{
+         Array.append(dataFromNewView!)
         tableTaskList.reloadData()
-        
         }
+        
     
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if (segue.identifier == "view1updatesegue")
+        {
+        let b: AddTaskViewController = segue.destinationViewController as! AddTaskViewController
+        if index != nil && Array.count != 0 {
+       b.nam =  Array[index]
+       b.indexView2 = index
+        }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +58,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     index = indexPath.row
     textboxTask.text = Array[index!]
+    self.btndelOutlet.enabled = true
+    self.btnupdate.enabled = true
     }
     
     
@@ -62,6 +78,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
    @IBAction func addbutton(sender: AnyObject)
     {
+        
+        
       // if textboxTask.text != ""{
        // Array.append(textboxTask.text!)
         //tableTaskList.reloadData()
@@ -70,12 +88,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     }
     @IBAction func updateButtonAction(sender: AnyObject) {
-        if textboxTask.text != ""
-        {
-            Array[index!] = textboxTask.text!
-            tableTaskList.reloadData()
-            textboxTask.text = ""
-        }
+ 
+//        if textboxTask.text != ""
+//        {
+//            Array[index!] = textboxTask.text!
+//            tableTaskList.reloadData()
+//            textboxTask.text = ""
+//        }
     }
 }
 

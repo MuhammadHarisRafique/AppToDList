@@ -10,45 +10,53 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
     
+    
     @IBOutlet weak var addTaskTxtbox: UITextField!
+    var nam = ""
+    var indexView2 = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    override func viewDidAppear(animated: Bool) {
+        
+        self.addTaskTxtbox.text = nam
+    }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         let a: ViewController = segue.destinationViewController as! ViewController
-//        if segue.identifier == "segue"
-////        {
-//            let  a: ViewController = (segue.destinationViewController as? ViewController!)!
-//        
-        
-        
-        
-            a.dataFromNewView = addTaskTxtbox.text!
-        
-        
+        if addTaskTxtbox.text != "" {
+        a.dataFromNewView = addTaskTxtbox.text!
+        a.Array[indexView2] = nam
+        }
     }
-    //
     @IBAction func btnBackAction(sender: AnyObject)
     {
-        performSegueWithIdentifier("segue", sender: self )
+        
+        
     }
-    //        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    //        {
-    //            let a: ViewController = segue.destinationViewController as! ViewController
-    //            a.dataFromNewView = addTaskTxtbox.text!
-    //            print(a.dataFromNewView)
-    //            }
-    //            
+    @IBAction func btnUpdateView2(sender: AnyObject)
     
+    {
+        if addTaskTxtbox.text != ""
+        {
+            
+            nam = addTaskTxtbox.text!
+            
+        }
+    }
     
-}
+   
+    }
+    
+
 
 
 
