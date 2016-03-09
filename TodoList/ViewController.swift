@@ -25,6 +25,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
          Array.append(dataFromNewView!)
         tableTaskList.reloadData()
         }
+        else if dataFromNewView == ""
+        {
+            tableTaskList.reloadData()
+        
+        }
         
     
     }

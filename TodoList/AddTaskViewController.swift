@@ -32,16 +32,25 @@ class AddTaskViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         let a: ViewController = segue.destinationViewController as! ViewController
-        if addTaskTxtbox.text != "" {
-           if segue.identifier == "view2savesegue"{
+        if segue.identifier == "view2savesegue"{
+        if addTaskTxtbox.text != "" && addTaskTxtbox.text != nil{
+           
         a.dataFromNewView = addTaskTxtbox.text!
             }
-        a.Array[indexView2] = nam
+         else if segue.identifier == "updateview2segue"{
+            
+       a.Array[indexView2] = nam
+            }
         }
+        if segue.identifier == "backSegueidetifier"{
+           a.dataFromNewView =  addTaskTxtbox.text
+            a.dataFromNewView = ""
+        }
+        
     }
     @IBAction func btnBackAction(sender: AnyObject)
     {
-        
+//       addTaskTxtbox.text = ""
         
     }
     @IBAction func btnUpdateView2(sender: AnyObject)
