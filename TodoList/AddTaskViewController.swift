@@ -11,7 +11,9 @@ import UIKit
 class AddTaskViewController: UIViewController {
     
     
+    @IBOutlet weak var saveButtonOutlet: UIButton!
     @IBOutlet weak var addTaskTxtbox: UITextField!
+    var condition: Bool?
     var nam = ""
     var indexView2 = 0
     override func viewDidLoad() {
@@ -21,6 +23,9 @@ class AddTaskViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         self.addTaskTxtbox.text = nam
+        if nam != ""{
+        self.saveButtonOutlet.enabled = condition!
+        }
     }
     
     override func didReceiveMemoryWarning()
@@ -37,11 +42,14 @@ class AddTaskViewController: UIViewController {
            
         a.dataFromNewView = addTaskTxtbox.text!
             }
-         else if segue.identifier == "updateview2segue"{
-            
-       a.Array[indexView2] = nam
-            }
         }
+         else if segue.identifier == "updateview2segue"
+        
+        {
+       
+            a.Array[indexView2] = nam
+        }
+        
         if segue.identifier == "backSegueidetifier"{
            a.dataFromNewView =  addTaskTxtbox.text
             a.dataFromNewView = ""

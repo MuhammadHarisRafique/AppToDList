@@ -152,6 +152,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="addTaskTxtbox" destination="4LT-IF-DI0" id="sul-0t-etU"/>
+                        <outlet property="saveButtonOutlet" destination="xgq-eR-8yn" id="XmT-HO-ily"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segue" id="JQ1-Xh-Gjm"/>
                     </connections>
                 </viewController>
@@ -161,7 +162,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MPg-6y-EvV"/>
-        <segue reference="l4L-Bi-6JP"/>
+        <segue reference="GbX-kb-0Kz"/>
+        <segue reference="H2x-Df-MeM"/>
     </inferredMetricsTieBreakers>
 </document>

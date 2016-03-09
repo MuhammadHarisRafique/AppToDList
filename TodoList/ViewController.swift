@@ -41,6 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if index != nil && Array.count != 0 {
        b.nam =  Array[index]
        b.indexView2 = index
+       b.condition = false
         }
         }
         
