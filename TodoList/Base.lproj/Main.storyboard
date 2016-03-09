@@ -116,17 +116,6 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="backSegueidetifier" id="MPg-6y-EvV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQ6-jc-ZIV">
-                                <rect key="frame" x="26" y="162" width="274" height="30"/>
-                                <color key="backgroundColor" red="0.37358777859999998" green="0.9506007433" blue="0.37144863189999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Update">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnUpdateView2:" destination="DO3-4d-AX4" eventType="touchUpInside" id="PCV-cQ-Nvn"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="updateview2segue" id="H2x-Df-MeM"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgq-eR-8yn">
                                 <rect key="frame" x="26" y="109" width="274" height="30"/>
                                 <color key="backgroundColor" red="0.37358777862998832" green="0.95060074329376221" blue="0.37144863189481342" alpha="1" colorSpace="calibratedRGB"/>
@@ -136,6 +125,17 @@
                                 <connections>
                                     <action selector="btnBackAction:" destination="DO3-4d-AX4" eventType="touchUpInside" id="fMe-XN-WHV"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="view2savesegue" id="GeW-QS-KNQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQ6-jc-ZIV">
+                                <rect key="frame" x="26" y="162" width="274" height="30"/>
+                                <color key="backgroundColor" red="0.37358777859999998" green="0.9506007433" blue="0.37144863189999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnUpdateView2:" destination="DO3-4d-AX4" eventType="touchUpInside" id="PCV-cQ-Nvn"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="updateview2segue" id="H2x-Df-MeM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,6 +152,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="addTaskTxtbox" destination="4LT-IF-DI0" id="sul-0t-etU"/>
+                        <outlet property="btnUpdateOfView2" destination="xQ6-jc-ZIV" id="vsA-0B-MYs"/>
                         <outlet property="saveButtonOutlet" destination="xgq-eR-8yn" id="XmT-HO-ily"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segue" id="JQ1-Xh-Gjm"/>
                     </connections>
@@ -162,7 +163,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GbX-kb-0Kz"/>
+        <segue reference="l4L-Bi-6JP"/>
         <segue reference="H2x-Df-MeM"/>
     </inferredMetricsTieBreakers>
 </document>

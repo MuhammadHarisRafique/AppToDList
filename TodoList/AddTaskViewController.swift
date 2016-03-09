@@ -11,9 +11,11 @@ import UIKit
 class AddTaskViewController: UIViewController {
     
     
+    @IBOutlet weak var btnUpdateOfView2: UIButton!
     @IBOutlet weak var saveButtonOutlet: UIButton!
     @IBOutlet weak var addTaskTxtbox: UITextField!
     var condition: Bool?
+    var conditionForUpdateButton: Bool?
     var nam = ""
     var indexView2 = 0
     override func viewDidLoad() {
@@ -23,6 +25,10 @@ class AddTaskViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         self.addTaskTxtbox.text = nam
+       if nam == ""{
+        self.btnUpdateOfView2.enabled = conditionForUpdateButton!
+        }
+       
         if nam != ""{
         self.saveButtonOutlet.enabled = condition!
         }

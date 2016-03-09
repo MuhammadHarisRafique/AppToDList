@@ -34,10 +34,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {let b: AddTaskViewController = segue.destinationViewController as! AddTaskViewController
+        if segue.identifier == "btnaddseque"
     {
-        if (segue.identifier == "view1updatesegue")
+   b.conditionForUpdateButton = false
+        
+    }
+        else if (segue.identifier == "view1updatesegue")
         {
-        let b: AddTaskViewController = segue.destinationViewController as! AddTaskViewController
+        
         if index != nil && Array.count != 0 {
        b.nam =  Array[index]
        b.indexView2 = index
