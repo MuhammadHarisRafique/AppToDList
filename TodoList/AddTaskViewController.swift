@@ -20,20 +20,31 @@ class AddTaskViewController: UIViewController {
     var indexView2 = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        if nam == ""
+        {
+            self.btnUpdateOfView2.alpha = 0.2
+              self.btnUpdateOfView2.enabled = conditionForUpdateButton!
+        }
+        if nam != ""{
+            self.saveButtonOutlet.enabled = condition!
+        }
+
         
     }
     override func viewDidAppear(animated: Bool) {
-        
-        self.addTaskTxtbox.text = nam
-       if nam == ""{
-        self.btnUpdateOfView2.enabled = conditionForUpdateButton!
-        }
-       
-        if nam != ""{
-        self.saveButtonOutlet.enabled = condition!
-        }
+//        if nam == ""
+//        {
+//            self.btnUpdateOfView2.alpha = 0.2
+//            self.btnUpdateOfView2.enabled = conditionForUpdateButton!
+//        }
+//        if nam != ""{
+//            self.saveButtonOutlet.enabled = condition!
+//        }
+//        
+//        
     }
-    
+
+        
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()

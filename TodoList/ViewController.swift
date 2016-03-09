@@ -11,15 +11,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var btnupdate: UIButton!
     @IBOutlet weak var tableTaskList: UITableView!
     @IBOutlet weak var textboxTask: UITextField!
+    
        override func viewDidLoad() {
         super.viewDidLoad()
         tableTaskList.dataSource = self
         tableTaskList.delegate = self
-        textboxTask.layer.borderWidth = 1
-        textboxTask.layer.borderColor = UIColor.blackColor().CGColor
         self.btndelOutlet.enabled = false
+        self.btndelOutlet.alpha = 0.2
         self.btnupdate.enabled = false
+        self.btnupdate.alpha = 0.2
             }
+    
     override func viewDidAppear(animated: Bool) {
         if dataFromNewView != "" && dataFromNewView != nil{
          Array.append(dataFromNewView!)
@@ -68,10 +70,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
     index = indexPath.row
-    textboxTask.text = Array[index!]
     self.btndelOutlet.enabled = true
     self.btnupdate.enabled = true
-    }
+    self.btndelOutlet.alpha = 10
+    self.btnupdate.alpha = 10
+       }
     
     
 
@@ -79,9 +82,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         if index != nil
         {
-            Array.removeAtIndex(index!)
-            tableTaskList.reloadData()
-            textboxTask.text = ""
+        Array.removeAtIndex(index!)
+        tableTaskList.reloadData()
+        index = nil
+       self.btnupdate.enabled = false
         }
         
     }
