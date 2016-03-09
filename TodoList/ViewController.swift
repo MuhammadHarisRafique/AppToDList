@@ -11,6 +11,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var btnupdate: UIButton!
     @IBOutlet weak var tableTaskList: UITableView!
     @IBOutlet weak var textboxTask: UITextField!
+    @IBOutlet weak var btnAdd: UIButton!
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let count = touches.count
+        index = 0
+        if count > 0
+        {
+           // var a = true
+            self.btnupdate.alpha = 0.2
+            self.btndelOutlet.alpha = 0.2
+            if index == 0 || index > 0
+            {
+                //tableTaskList.deselectRowAtIndexPath(index, animated: <#T##Bool#>)
+                }
+               // tableTaskList.reloadData()
+            }
+        }
+
+    
     
        override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +53,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {let b: AddTaskViewController = segue.destinationViewController as! AddTaskViewController
         if segue.identifier == "btnaddseque"
@@ -58,15 +77,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         
     }
+    
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Array.count
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         cell.textLabel?.text = Array[indexPath.row]
         return cell
         
     }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
     index = indexPath.row
@@ -89,7 +112,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
     }
-    @IBOutlet weak var btnAdd: UIButton!
+   
 
    @IBAction func addbutton(sender: AnyObject)
     {
@@ -102,6 +125,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     
     }
+    
     @IBAction func updateButtonAction(sender: AnyObject) {
  
 //        if textboxTask.text != ""
