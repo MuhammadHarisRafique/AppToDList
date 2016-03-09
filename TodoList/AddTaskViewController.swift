@@ -20,6 +20,7 @@ class AddTaskViewController: UIViewController {
     var indexView2 = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         if nam == ""
         {
             self.btnUpdateOfView2.alpha = 0.2
@@ -27,6 +28,7 @@ class AddTaskViewController: UIViewController {
         }
         if nam != ""{
             self.saveButtonOutlet.enabled = condition!
+            addTaskTxtbox.text = nam
         }
 
         
@@ -85,6 +87,13 @@ class AddTaskViewController: UIViewController {
         {
             
             nam = addTaskTxtbox.text!
+            
+        }
+    }
+    @IBAction func tbxtaskadd(sender: AnyObject) {
+        if addTaskTxtbox.text != ""{
+
+            self.saveButtonOutlet.alpha = 10
             
         }
     }
