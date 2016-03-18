@@ -5,7 +5,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var index: Int!
     var dataFromNewView: String?
-    var Array = ["mango", "Orange", "Grapes"]
+    var Array = ["mango", "Orange", "Grapes", "Apple", "Banana", "Stawberrry"]
+
     
     @IBOutlet weak var btndelOutlet: UIButton!
     @IBOutlet weak var btnupdate: UIButton!
@@ -22,13 +23,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.btndelOutlet.alpha = 0.2
             if index == 0 || index > 0
             {
-                //tableTaskList.deselectRowAtIndexPath(index, animated: <#T##Bool#>)
-                }
-               // tableTaskList.reloadData()
+                
+               
+                tableTaskList.reloadData()
             }
         }
 
-    
+    }
     
        override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {let b: AddTaskViewController = segue.destinationViewController as! AddTaskViewController
+    {
+        let b: AddTaskViewController = segue.destinationViewController as! AddTaskViewController
         if segue.identifier == "btnaddseque"
     {
    b.conditionForUpdateButton = false
@@ -89,6 +91,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
         
     }
+    func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+       return indexPath.row % 4
+    }
+
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
@@ -97,6 +103,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     self.btnupdate.enabled = true
     self.btndelOutlet.alpha = 10
     self.btnupdate.alpha = 10
+  
+    
        }
     
     
@@ -112,7 +120,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
     }
-   
+    
 
    @IBAction func addbutton(sender: AnyObject)
     {

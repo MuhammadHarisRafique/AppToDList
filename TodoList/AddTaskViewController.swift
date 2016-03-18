@@ -20,33 +20,33 @@ class AddTaskViewController: UIViewController {
     var indexView2 = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         if nam == ""
         {
             self.btnUpdateOfView2.alpha = 0.2
-              self.btnUpdateOfView2.enabled = conditionForUpdateButton!
+            self.btnUpdateOfView2.enabled = conditionForUpdateButton!
         }
         if nam != ""{
             self.saveButtonOutlet.enabled = condition!
             addTaskTxtbox.text = nam
         }
-
+        
         
     }
     override func viewDidAppear(animated: Bool) {
-//        if nam == ""
-//        {
-//            self.btnUpdateOfView2.alpha = 0.2
-//            self.btnUpdateOfView2.enabled = conditionForUpdateButton!
-//        }
-//        if nam != ""{
-//            self.saveButtonOutlet.enabled = condition!
-//        }
-//        
-//        
+        //        if nam == ""
+        //        {
+        //            self.btnUpdateOfView2.alpha = 0.2
+        //            self.btnUpdateOfView2.enabled = conditionForUpdateButton!
+        //        }
+        //        if nam != ""{
+        //            self.saveButtonOutlet.enabled = condition!
+        //        }
+        //
+        //
     }
-
-        
+    
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -57,31 +57,31 @@ class AddTaskViewController: UIViewController {
     {
         let a: ViewController = segue.destinationViewController as! ViewController
         if segue.identifier == "view2savesegue"{
-        if addTaskTxtbox.text != "" && addTaskTxtbox.text != nil{
-           
-        a.dataFromNewView = addTaskTxtbox.text!
+            if addTaskTxtbox.text != "" && addTaskTxtbox.text != nil{
+                
+                a.dataFromNewView = addTaskTxtbox.text!
             }
         }
-         else if segue.identifier == "updateview2segue"
-        
+        else if segue.identifier == "updateview2segue"
+            
         {
-       
+            
             a.Array[indexView2] = nam
         }
         
         if segue.identifier == "backSegueidetifier"{
-           a.dataFromNewView =  addTaskTxtbox.text
+            a.dataFromNewView =  addTaskTxtbox.text
             a.dataFromNewView = ""
         }
         
     }
     @IBAction func btnBackAction(sender: AnyObject)
     {
-//       addTaskTxtbox.text = ""
+        //       addTaskTxtbox.text = ""
         
     }
     @IBAction func btnUpdateView2(sender: AnyObject)
-    
+        
     {
         if addTaskTxtbox.text != ""
         {
@@ -92,15 +92,15 @@ class AddTaskViewController: UIViewController {
     }
     @IBAction func tbxtaskadd(sender: AnyObject) {
         if addTaskTxtbox.text != ""{
-
+            
             self.saveButtonOutlet.alpha = 10
             
         }
     }
     
-   
-    }
     
+}
+
 
 
 

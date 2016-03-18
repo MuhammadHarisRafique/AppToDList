@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042272651C93014800BB19DA /* CellClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042272641C93014800BB19DA /* CellClassTableViewCell.swift */; };
 		04F4F36C1C8D7ECF004F9D1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4F36B1C8D7ECF004F9D1E /* AppDelegate.swift */; };
 		04F4F36E1C8D7ECF004F9D1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4F36D1C8D7ECF004F9D1E /* ViewController.swift */; };
 		04F4F3711C8D7ECF004F9D1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F4F36F1C8D7ECF004F9D1E /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042272641C93014800BB19DA /* CellClassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellClassTableViewCell.swift; sourceTree = "<group>"; };
 		04F4F3681C8D7ECF004F9D1E /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F4F36B1C8D7ECF004F9D1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F4F36D1C8D7ECF004F9D1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				04F4F3721C8D7ECF004F9D1E /* Assets.xcassets */,
 				04F4F3741C8D7ECF004F9D1E /* LaunchScreen.storyboard */,
 				04F4F3771C8D7ECF004F9D1E /* Info.plist */,
+				042272641C93014800BB19DA /* CellClassTableViewCell.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042272651C93014800BB19DA /* CellClassTableViewCell.swift in Sources */,
 				04F4F36E1C8D7ECF004F9D1E /* ViewController.swift in Sources */,
 				04F4F37E1C8DB3B8004F9D1E /* AddTaskViewController.swift in Sources */,
 				04F4F36C1C8D7ECF004F9D1E /* AppDelegate.swift in Sources */,
@@ -288,6 +292,7 @@
 				04F4F37C1C8D7ECF004F9D1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
